@@ -31,7 +31,6 @@
                             PrzedstawSie();
                             close = Closing();
                             break;
-
                         case "2":
                             Sortowanie();
                             close = Closing();

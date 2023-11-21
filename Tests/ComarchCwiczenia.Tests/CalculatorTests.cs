@@ -10,8 +10,8 @@ namespace ComarchCwiczenia.Tests
             calculator = new Calculator();
         }
 
-        [Test]
         [TestCase(2, 3)]
+        [TestCase(0, 0)]
         public void AddShouldReturnCorrectResult(int x, int y)
         {
             //Arrange
