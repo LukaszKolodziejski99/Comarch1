@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComarchCwiczenia", "ComarchCwiczenia\ComarchCwiczenia.csproj", "{2667732F-39D6-4C67-9AC8-E1984D7B9106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComarchCwiczenia", "ComarchCwiczenia\ComarchCwiczenia.csproj", "{2667732F-39D6-4C67-9AC8-E1984D7B9106}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3A8E6B84-CDCD-47C5-9A85-7EF3A300FB3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComarchCwiczenia.Tests", "Tests\ComarchCwiczenia.Tests\ComarchCwiczenia.Tests.csproj", "{0F5A7BC8-275D-4379-80F9-8DC98FFE5CCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{2667732F-39D6-4C67-9AC8-E1984D7B9106}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2667732F-39D6-4C67-9AC8-E1984D7B9106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2667732F-39D6-4C67-9AC8-E1984D7B9106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5A7BC8-275D-4379-80F9-8DC98FFE5CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5A7BC8-275D-4379-80F9-8DC98FFE5CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5A7BC8-275D-4379-80F9-8DC98FFE5CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5A7BC8-275D-4379-80F9-8DC98FFE5CCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F5A7BC8-275D-4379-80F9-8DC98FFE5CCD} = {3A8E6B84-CDCD-47C5-9A85-7EF3A300FB3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A269756-50F8-4910-829C-72A86981B33D}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ComarchCwiczenia;
 
-internal class Calculator
+public class Calculator
 {
     public int Add(int x, int y)
     {
