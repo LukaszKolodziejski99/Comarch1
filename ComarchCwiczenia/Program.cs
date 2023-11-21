@@ -8,32 +8,79 @@
         /// <param name="args">Argumenty startowe aplikacji.</param>
         static void Main(string[] args)
         {
-            Intro();
-            string option = Console.ReadLine();
-
-            switch (option)
+            ShowMenu();
+            string option;
+            do
             {
-                case "1":
-                    PrzedstawSie();
-                    break;
+                Console.Write("Wybierz funkcję: ");
+                option = Console.ReadLine();
 
-                case "2":
-                    Sortowanie();
-                    break;
-                default:
-                    break;
-            }
+                Calculator calculator = new Calculator();
 
+                int x = 0;
+                int y = 0;
+
+                switch (option)
+                {
+                    case "1":
+                        PrzedstawSie();
+                        break;
+
+                    case "2":
+                        Sortowanie();
+                        break;
+                    case "3":
+                        GetXY(out x, out y);
+                        int addResult = calculator.Add(x, y);
+                        Console.WriteLine($"Wynik dodawania {x} i {y} to {addResult}.");
+                        break;
+                    case "4":
+                        GetXY(out x, out y);
+                        int subResult = calculator.Substraction(x, y);
+                        Console.WriteLine($"Wynik odejmowania {x} i {y} to {subResult}.");
+                        break;
+                    case "5":
+                        GetXY(out x, out y);
+                        int multiResult = calculator.Multiply(x, y);
+                        Console.WriteLine($"Wynik możenia {x} i {y} to {multiResult}.");
+                        break;
+                    case "6":
+                        GetXY(out x, out y);
+                        float divResult = calculator.Divide(x, y);
+                        Console.WriteLine($"Wynik dzielenia {x} i {y} to {divResult}.");
+                        break;
+                    case "7":
+                        GetXY(out x, out y);
+                        int modResult = calculator.Modulo(x, y);
+                        Console.WriteLine($"Wynik reszty z dzielenia {x} i {y} to {modResult}.");
+                        break;
+                    default:
+                        Console.WriteLine("Nieprawidłowy wybór.");
+                        break;
+                }
+            } while (!int.TryParse(option, out int value));
 
         }
 
-        private static void Intro()
+        private static void GetXY(out int x, out int y)
         {
+            Console.Write("Podaj x: ");
+            x = int.Parse(Console.ReadLine());
+            Console.Write("Podaj y: ");
+            y = int.Parse(Console.ReadLine());
+        }
+
+        private static void ShowMenu()
+        {
+            Console.Clear();
             Console.WriteLine("KALKULATOR 1.0");
             Console.WriteLine("1. Przedstaw się");
             Console.WriteLine("2. Sortowanie");
-
-            Console.Write("Wybierz funkcję: ");
+            Console.WriteLine("3. Dodawanie");
+            Console.WriteLine("4. Odejmowanie");
+            Console.WriteLine("5. Mnożenie");
+            Console.WriteLine("6. Dzielenie");
+            Console.WriteLine("7. Modulo");
         }
 
         private static void PrzedstawSie()
