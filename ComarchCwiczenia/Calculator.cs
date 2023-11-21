@@ -25,6 +25,7 @@ public class Calculator
 
     public float Divide (int x, int y)
     {
+        if (y == 0) throw new ArgumentException("Dzielenie przez zero!", nameof(y));
         return x / (float)y;
     }
 

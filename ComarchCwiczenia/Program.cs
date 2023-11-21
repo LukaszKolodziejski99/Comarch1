@@ -55,14 +55,32 @@
                             break;
                         case "6":
                             GetXY(out x, out y);
-                            float divResult = calculator.Divide(x, y);
-                            Console.WriteLine($"Wynik dzielenia {x} i {y} to {divResult}.");
+                            try
+                            {
+                                float divResult = calculator.Divide(x, y);
+                                Console.WriteLine($"Wynik dzielenia {x} i {y} to {divResult}.");
+                            }
+                            catch (Exception ex)
+                            {
+                                ShowError(ex.Message);
+                            }
                             close = Closing();
                             break;
                         case "7":
                             GetXY(out x, out y);
-                            int modResult = calculator.Modulo(x, y);
-                            Console.WriteLine($"Wynik reszty z dzielenia {x} i {y} to {modResult}.");
+                            try
+                            {
+                                int modResult = calculator.Modulo(x, y);
+                                Console.WriteLine($"Wynik reszty z dzielenia {x} i {y} to {modResult}.");
+                            }
+                            catch (DivideByZeroException ex)
+                            {
+                                ShowError("Dzielenie przez zero!");
+                            }
+                            catch (Exception ex)
+                            {
+                                ShowError("Wystąpił nieprzewidziany wyjątek");
+                            }
                             close = Closing();
                             break;
                         default:
@@ -71,6 +89,13 @@
                     }
                 } while (!int.TryParse(option, out int value) || value > 7 || value < 1);
             } while(!close);
+        }
+
+        private static void ShowError(string msg)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(msg);
+            Console.ResetColor();
         }
 
         private static bool Closing()
